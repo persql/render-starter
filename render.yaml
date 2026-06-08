@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: persql-render-starter
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /healthz
+    envVars:
+      # Get all three at https://render.persql.com/connect, then paste
+      # them when Render prompts (or share them via an Environment Group).
+      - key: PERSQL_API_URL
+        sync: false
+      - key: PERSQL_DATABASE
+        sync: false
+      - key: PERSQL_TOKEN
+        sync: false
